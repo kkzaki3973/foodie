@@ -1,8 +1,8 @@
 name: Deploy Pipeline
-env:
-  # todo: ADD HERE AFTER INTEGRATING SUPABASE
-  # SUPABASE_URL: "https://jokkvunyzexyiwypinjd.supabase.co"
-  # SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impva2t2dW55emV4eWl3eXBpbmpkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTYzODIyNzEsImV4cCI6MjAzMTk1ODI3MX0.O-_1nkM2Blhm7kjscCL9bC0BIp_yhLeKGVoFKDdo_bw"
+# env:
+# todo: ADD HERE AFTER INTEGRATING SUPABASE
+# SUPABASE_URL: "https://jokkvunyzexyiwypinjd.supabase.co"
+# SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impva2t2dW55emV4eWl3eXBpbmpkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTYzODIyNzEsImV4cCI6MjAzMTk1ODI3MX0.O-_1nkM2Blhm7kjscCL9bC0BIp_yhLeKGVoFKDdo_bw"
 on: [push]
 jobs:
   format:
