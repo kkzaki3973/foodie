@@ -1,0 +1,81 @@
+name: Deploy Pipeline
+env:
+  # todo: ADD HERE AFTER INTEGRATING SUPABASE
+  # SUPABASE_URL: "https://jokkvunyzexyiwypinjd.supabase.co"
+  # SUPABASE_ANON_KEY: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impva2t2dW55emV4eWl3eXBpbmpkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTYzODIyNzEsImV4cCI6MjAzMTk1ODI3MX0.O-_1nkM2Blhm7kjscCL9bC0BIp_yhLeKGVoFKDdo_bw"
+on: [push]
+jobs:
+  format:
+    name: Format
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v1
+
+      - name: Install Dependencies
+        run: bun install
+        working-directory: .
+
+      - name: Format App
+        run: bun run format
+        working-directory: .
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Bun
+        uses: oven-sh/setup-bun@v1
+
+      - name: Install Dependencies
+        run: bun install
+        working-directory: .
+
+      - name: Lint App
+        run: bun run lint
+        working-directory: .
+
+  # todo: add here after adding tests
+  # test:
+  #   name: Test
+  #   needs: format
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v4
+
+  #     - name: Install Bun
+  #       uses: oven-sh/setup-bun@v1
+
+  #     - name: Install Dependencies
+  #       run: bun install
+  #       working-directory: .
+
+  #     - name: Test App
+  #       run: bun run test
+  #       working-directory: .
+
+  # build:
+  #   name: Build
+  #   # needs: test
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Checkout
+  #       uses: actions/checkout@v4
+
+  #     - name: Install Bun
+  #       uses: oven-sh/setup-bun@v1
+
+  #     - name: Install Dependencies
+  #       run: bun install
+  #       working-directory: .
+
+  #     - name: Build App
+  #       run: bun run build
+  #       working-directory: .
